@@ -27,5 +27,9 @@ int main()
     my_simple_ptr::simple_ptr<int> sp5{ new int(5) };
     //sp5 = sp;
 
+    my_simple_ptr::simple_ptr<int> sp6{ sp.release() };
+    //std::cout << *sp << '\n';
+    std::cout << *sp6 << '\n';
+
     return EXIT_SUCCESS;
 }

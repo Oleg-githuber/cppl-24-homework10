@@ -24,6 +24,13 @@ namespace my_simple_ptr
 
 		auto operator=(const simple_ptr<MyType>& other) = delete;
 
+		MyType* release()
+		{
+			MyType* temp{ value };
+			value = nullptr;
+			return temp;
+		}
+
 		~simple_ptr()
 		{
 			delete value;
